@@ -2,10 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\api\ItemController;
 
-Route::get('/user', function () {
-    return "List users";
-});
+Route::get('/user', [ItemController::class, 'index']);
+
 Route::get('/user/{id}', function ($id) {
     return "User $id";
 });
