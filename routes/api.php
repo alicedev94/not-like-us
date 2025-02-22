@@ -6,18 +6,10 @@ use App\Http\Controllers\api\ItemController;
 
 Route::get('/user', [ItemController::class, 'index']);
 
-Route::get('/user/{id}', function ($id) {
-    return "User $id";
-});
+Route::get('/user/{id}', [ItemController::class, 'show']);
 
-Route::post('/user', function () {
-    return "Create user";
-});
+Route::post('/user', [ItemController::class, 'store']);
 
-Route::put('/user/{id}', function ($id) {
-    return "Update user $id";
-});
+Route::put('/user/{id}', [ItemController::class, 'update']);
 
-Route::delete('/user/{id}', function ($id) {
-    return "Delete user $id";
-});
+Route::delete('/user/{id}', [ItemController::class, 'destroy']);
